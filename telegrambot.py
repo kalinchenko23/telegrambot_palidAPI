@@ -2,7 +2,7 @@ import telebot
 import time
 import requests
 import json
-import os
+import osy
 from plaid_APi import fin
 from  expenses_SQL_pandas import df
 import logging

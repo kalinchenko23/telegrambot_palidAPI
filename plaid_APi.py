@@ -6,8 +6,8 @@ import os
 import psycopg2
 
 client = Client(
-  client_id="5f178b54b89a9900124d8a68",
-  secret="87db71caedd98aa9bf81f3be973e8c",
+  client_id=os.environ.get("CLIENT_ID"),
+  secret=os.environ.get("CLIENT_SECRET"),
   environment='development',
   api_version='2019-05-29'  # Specify API version
 )
