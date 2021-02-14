@@ -41,8 +41,8 @@ class Finansial_df():
         week_df=week_df.set_index('merchant_name')
         return week_df
     def current_fin_state(self):
-        self.accounts.amount=(self.accounts.limit_amount-self.accounts.amount)*(-1)
-        return f"yor total amount is ${round(self.accounts.amount.sum())}"
+        total=(self.accounts.limit_amount-self.accounts.amount)*(-1)
+        return f"yor total amount is ${total.sum()}"
 
 df=Finansial_df(engine)
 

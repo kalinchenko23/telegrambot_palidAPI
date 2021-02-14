@@ -48,9 +48,9 @@ def make_reply(msg):
         reply="""Here is your options:\n\"total\" for total amount on the bank account\n\"transactions\" for all transactions for the week
         \n\"weekly\" for total spending of the week\n\"monthly\" for total spending of the month"""
 
-    elif "total" in msg.lower():
+    elif "total" in msg.lower(): 
         fin.update_amount()
-        reply=df.current_fin_state()
+       	reply=df.current_fin_state()
 
     elif "transactions" in msg.lower():
         fin.update_transactions()

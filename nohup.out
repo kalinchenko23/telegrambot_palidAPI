@@ -1,0 +1,19 @@
+sudo: /home/kalinchenkomax/telegrambot/telegrambot.py: command not found
+/home/kalinchenkomax/.local/lib/python3.8/site-packages/plaid/client.py:69: UserWarning: 
+                Development is not intended for production usage.
+                Swap out url for https://production.plaid.com
+                via Client.config before switching to production
+            
+  warnings.warn('''
+Traceback (most recent call last):
+  File "/home/kalinchenkomax/telegrambot/telegrambot.py", line 85, in <module>
+    reply=make_reply(message)
+  File "/home/kalinchenkomax/telegrambot/telegrambot.py", line 52, in make_reply
+    reply=df.current_fin_state()
+  File "/home/kalinchenkomax/telegrambot/expenses_SQL_pandas.py", line 44, in current_fin_state
+    total=(self.accounts.limit_amount-self.accounts.amount)*(-1).sum()
+AttributeError: 'int' object has no attribute 'sum'
+  File "/home/kalinchenkomax/telegrambot/telegrambot.py", line 52
+    fin.update_amount()
+                      ^
+TabError: inconsistent use of tabs and spaces in indentation
