@@ -5,6 +5,16 @@ import json
 import os
 from plaid_APi import fin
 from  expenses_SQL_pandas import df
+import logging
+logger=logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+formatter=logging.Formatter('%(asctime)s:%(levelno)s:%(message)s:%(module)s:%(funcName)s')
+file_handler=logging.FileHandler("plaid.log")
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+
+#setting up logging settings
+logging.basicConfig(filename='new_plaid.log',level=logging.INFO,format='%(asctime)s:%(message)s')
 
 
 bot_token=os.environ.get("BOT_TOKEN")
@@ -34,22 +44,22 @@ update_id=None
 bot=Telegram_bot(bot_token)
 
 def make_reply(msg):
-    if msg=="help":
+    if msg=="help".lower():
         reply="""Here is your options:\n\"total\" for total amount on the bank account\n\"transactions\" for all transactions for the week
         \n\"weekly\" for total spending of the week\n\"monthly\" for total spending of the month"""
 
-    elif "total" in msg:
+    elif "total" in msg.lower():
         fin.update_amount()
         reply=df.current_fin_state()
 
-    elif "transactions" in msg:
+    elif "transactions" in msg.lower():
         fin.update_transactions()
         reply=df.weekly_transactions()
 
-    elif "weekly" in msg:
+    elif "weekly" in msg.lower():
         fin.update_transactions()
         reply= df.weekly_analysis()
-    elif "monthly" in msg:
+    elif "monthly" in msg.lower():
         fin.update_transactions()
         reply= df.monthly_analysis()
 
