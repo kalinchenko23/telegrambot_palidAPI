@@ -21,7 +21,7 @@ access_token_BOFA=os.environ.get("TOKEN_BOFA")
 class My_finance():
   connect=psycopg2.connect(user=os.environ.get("USER"),
                           database="plaidapi",
-                          password=os.environ.get("PASSWORD_SQL"),PASSWORD_SQL
+                          password=os.environ.get("PASSWORD_SQL"),
                           host = "127.0.0.1",
                           port = "5432",
                         )
