@@ -35,7 +35,7 @@ class Finansial_df():
         return f"total spending for the month: ${month_sum}\nmean amount: ${month_mean}"
     def weekly_transactions(self):
         week_df=self.transactions.loc[pd.to_datetime(self.transactions["date"])>=dt.datetime.today()-pd.offsets.Week(weekday=6)]
-        week_df.loc[['merchant_name']=="None",['merchant_name']]=week_df.name
+        week_df.loc[week_df['merchant_name']=="None",'merchant_name']=week_df.name
         week_df=week_df.sort_values('date',ascending=False)
         week_df=week_df[["merchant_name","amount"]]
         week_df=week_df.set_index('merchant_name')
