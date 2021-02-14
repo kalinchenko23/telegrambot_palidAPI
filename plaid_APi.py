@@ -4,20 +4,6 @@ import datetime
 import json
 import os
 import psycopg2
-import logging
-
-
-logger=logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
-formatter=logging.Formatter('%(asctime)s:%(levelno)s:%(message)s:%(module)s:%(funcName)s')
-file_handler=logging.FileHandler("plaid.log")
-file_handler.setFormatter(formatter)
-logger.addHandler(file_handler)
-
-
-
-#setting up logging settings
-logging.basicConfig(filename='new_plaid.log',level=logging.INFO,format='%(asctime)s:%(message)s')
 
 access_token_NAVY=os.environ.get("TOKEN_NAVY")
 
@@ -28,7 +14,7 @@ access_token_BOFA=os.environ.get("TOKEN_BOFA")
 class My_finance():
   connect=psycopg2.connect(user=os.environ.get("USER"),
                           database="plaidapi",
-                          password=os.environ.get("PASSWORD_SQL"),
+                          password=os.environ.get("PASSWORD_SQL"),PASSWORD_SQL
                           host = "127.0.0.1",
                           port = "5432",
                         )
@@ -68,9 +54,7 @@ class My_finance():
         category = str(" ".join(i['category']))
         c.execute(''' SELECT EXISTS(SELECT amount FROM transactions WHERE DATE='{}' AND amount='{}' AND category='{}') '''.format(date,amount,category))
         data=c.fetchone()
-        print(data)
         if data[0]==False:
-          print('sometrhing went wrong')
           names=i["name"].replace("'","")
           try:
             c.execute("""INSERT INTO transactions (merchant_name,name,category,payment_channel,amount,date,account_id)
