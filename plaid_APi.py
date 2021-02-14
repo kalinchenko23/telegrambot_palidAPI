@@ -14,7 +14,12 @@ file_handler=logging.FileHandler("plaid.log")
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
-
+client = Client(
+  client_id="5f178b54b89a9900124d8a68",
+  secret="87db71caedd98aa9bf81f3be973e8c",
+  environment='development',
+  api_version='2019-05-29'  # Specify API version
+)
 
 #setting up logging settings
 logging.basicConfig(filename='new_plaid.log',level=logging.INFO,format='%(asctime)s:%(message)s')
