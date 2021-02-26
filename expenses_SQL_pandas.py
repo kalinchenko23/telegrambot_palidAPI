@@ -42,7 +42,7 @@ class Finansial_df():
         return week_df
     def current_fin_state(self):
         total=(self.accounts.limit_amount-self.accounts.amount)*(-1)
-        return f"yor total amount is ${total.sum()}"
+        return f"yor total amount is ${round(total.sum())}"
 
 df=Finansial_df(engine)
 

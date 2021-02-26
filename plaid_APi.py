@@ -115,7 +115,7 @@ class My_finance():
 
 
 fin=My_finance(access_token_BOFA, access_token_NAVY)
-
+fin.update_transactions()
 
 
 

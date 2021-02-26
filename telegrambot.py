@@ -86,7 +86,7 @@ while True:
             reply=make_reply(message)
             bot.send_message(reply,from_)
 
-
+print(df.current_fin_state())
 
 
 
