@@ -5,3 +5,9 @@
 2021-02-27 16:33:00,461:20:[{'update_id': 811438269, 'message': {'message_id': 594, 'from': {'id': 1044062225, 'is_bot': False, 'first_name': 'Max', 'last_name': 'Kalinchenko', 'username': 'kalinchenko_m', 'language_code': 'en'}, 'chat': {'id': 1044062225, 'first_name': 'Max', 'last_name': 'Kalinchenko', 'username': 'kalinchenko_m', 'type': 'private'}, 'date': 1614468703, 'text': 'Transactions'}}, {'update_id': 811438270, 'message': {'message_id': 595, 'from': {'id': 1044062225, 'is_bot': False, 'first_name': 'Max', 'last_name': 'Kalinchenko', 'username': 'kalinchenko_m', 'language_code': 'en'}, 'chat': {'id': 1044062225, 'first_name': 'Max', 'last_name': 'Kalinchenko', 'username': 'kalinchenko_m', 'type': 'private'}, 'date': 1614468761, 'text': 'Total'}}]:telegrambot:<module>
 2021-02-27 16:40:39,248:20:[{'update_id': 811438269, 'message': {'message_id': 594, 'from': {'id': 1044062225, 'is_bot': False, 'first_name': 'Max', 'last_name': 'Kalinchenko', 'username': 'kalinchenko_m', 'language_code': 'en'}, 'chat': {'id': 1044062225, 'first_name': 'Max', 'last_name': 'Kalinchenko', 'username': 'kalinchenko_m', 'type': 'private'}, 'date': 1614468703, 'text': 'Transactions'}}, {'update_id': 811438270, 'message': {'message_id': 595, 'from': {'id': 1044062225, 'is_bot': False, 'first_name': 'Max', 'last_name': 'Kalinchenko', 'username': 'kalinchenko_m', 'language_code': 'en'}, 'chat': {'id': 1044062225, 'first_name': 'Max', 'last_name': 'Kalinchenko', 'username': 'kalinchenko_m', 'type': 'private'}, 'date': 1614468761, 'text': 'Total'}}]:telegrambot:<module>
 2021-02-27 17:06:25,677:20:Transactions:telegrambot:<module>
+2021-02-28 00:25:46,197:20:Total:telegrambot:<module>
+2021-02-28 00:25:51,694:20:Weekly:telegrambot:<module>
+2021-02-28 00:25:57,332:20:Monthly:telegrambot:<module>
+2021-02-28 00:26:05,479:20:Transactions:telegrambot:<module>
+2021-02-28 00:27:46,953:20:Total:telegrambot:<module>
+2021-02-28 00:27:59,194:20:T:telegrambot:<module>

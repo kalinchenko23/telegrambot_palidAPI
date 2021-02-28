@@ -14,7 +14,7 @@ client = Client(
 
 access_token_NAVY=os.environ.get("TOKEN_NAVY")
 
-access_token_AMEX='access-development-3041f26a-ecc4-47c7-9857-f555fa30c704'
+access_token_AMEX=os.environ.get("TOKEN_AMEX")
 access_token_BOFA=os.environ.get("TOKEN_BOFA")
 
 
