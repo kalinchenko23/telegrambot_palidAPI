@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 import datetime as dt
 import numpy as np
 import os
-
+from plaid_APi import fin
 #how to connect to database via psycopg2
 
 
@@ -20,6 +20,7 @@ class Finansial_df():
         self.engine=engine
 
     def weekly_analysis(self):
+        fin.update_transactions()
         week_df=self.transactions.loc[pd.to_datetime(self.transactions["date"])>=dt.datetime.today()-pd.offsets.Week(weekday=6)]
         week_df=week_df.loc[(week_df['merchant_name']!="None")&(week_df['merchant_name']!='Broadmoor Ridge')]
         week_df=week_df.sort_values('date')
@@ -27,6 +28,7 @@ class Finansial_df():
         week_mean=round(week_df.loc[week_df["amount"].astype(float)>0]["amount"].astype(float).mean(),2)
         return f"total spending for the week: ${week_sum}\nmean amount: ${week_mean}"
     def monthly_analysis(self):
+        fin.update_transactions()
         month_df=self.transactions.loc[pd.to_datetime(self.transactions["date"])>=dt.datetime.today()-pd.offsets.MonthEnd()]
         month_df=month_df.loc[month_df['merchant_name']!="None"]
         month_df=month_df.sort_values('date')
@@ -34,6 +36,7 @@ class Finansial_df():
         month_mean=round(month_df.loc[month_df["amount"].astype(float)>0]["amount"].astype(float).mean(),2)
         return f"total spending for the month: ${month_sum}\nmean amount: ${month_mean}"
     def weekly_transactions(self):
+        fin.update_transactions()
         week_df=self.transactions.loc[pd.to_datetime(self.transactions["date"])>=dt.datetime.today()-pd.offsets.Week(weekday=6)]
         week_df.loc[week_df.merchant_name=="None",'merchant_name']=week_df.name
         week_df=week_df.sort_values('date',ascending=False)
@@ -41,11 +44,11 @@ class Finansial_df():
         week_df=week_df.set_index('merchant_name')
         return week_df
     def current_fin_state(self):
+        fin.update_amount()
         total=(self.accounts.limit_amount-self.accounts.amount)*(-1)
         return f"yor total amount is ${round(total.sum())}"
 
 df=Finansial_df(engine)
-
 
 
 
